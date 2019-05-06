@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-   "service": "http-server -p 8002",
-   "build": "webpack --config ./webpack.config.js --mode production --env.NODE_ENV=production",
-   "dev": "node webpack.dev.service"
+    "service": "http-server -p 8002",
+    "build": "webpack --config ./webpack.config.js --mode production --env.NODE_ENV=production",
+    "pack": "node_modules/.bin/webpack",
+    "dev": "node webpack.dev.service"
   },
   "author": "xiongtao",
   "license": "ISC",

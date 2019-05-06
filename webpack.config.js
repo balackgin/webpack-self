@@ -2,11 +2,9 @@ const webpack = require('webpack');
 const path = require('path');
 const ExtracTextPlugin = require('extract-text-webpack-plugin');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
-const CleanWebpackPlugin = require('copy-webpack-plugin');
-const srcDir = path.join(__dirname, './src');
-const distDir = path.join(__dirname, './dist');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
-module.exprots = {
+module.exports = {
   entry: {
     index: [
       'webpack/hot/dev-server',
@@ -16,8 +14,8 @@ module.exprots = {
   },
   output: {
     path: path.resolve(__dirname, 'dist'),
-    publicPath: '../../',
-    filename: 'js[name].min.js'
+    publicPath: "../../",
+    filename: 'js/[name].min.js'
   },
   devtool: 'source-map',
   module: {
@@ -59,7 +57,7 @@ module.exprots = {
     new ExtracTextPlugin('style/[name].min.css'),
     new HtmlWebpackPlugin({
       hash: true,
-      chunks: ['inedx'],
+      chunks: ['index'],
       template: './src/pages/index/index.html',
       filename: 'pages/index/index/html'
     }),

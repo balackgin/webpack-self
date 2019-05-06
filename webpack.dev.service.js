@@ -4,6 +4,8 @@ var webpackConfig = require('./webpack.config.js');
 var compiler = webpack(webpackConfig);
 var server = new WebpackDevServer(compiler, {
   hot: true,
+  watchContentBase: true,
+  disableHostCheck: true,
   historyApiFallback: true,
   // It suppress error shown in console, so it has to be set to false.
   quiet: false,
